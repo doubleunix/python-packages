@@ -27,8 +27,6 @@
 
   {
 
-    overlays.default = overlay;
-
     legacyPackages.${system} = pkgs;
 
     packages.${system} = {
@@ -51,5 +49,10 @@
       ;
 
     };
+
+    overlays.default = overlay;
+
+    default = overlays.default;
+
   };
 }
