@@ -52,7 +52,7 @@
 
     overlays.default = overlay;
 
-    default = overlays.default;
+    default = overlay;
 
   };
 }
