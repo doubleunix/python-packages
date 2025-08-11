@@ -11,7 +11,9 @@
 
       system = "x86_64-linux";
 
-      overlay = import ./default.nix;
+      overlay = (final: prev: with prev; rec {
+        pythonPackagesExtensions = [ (import ./default.nix prev ) ];
+      });
 
       pkgs = import nixpkgs {
         inherit system;
@@ -32,6 +34,8 @@
     packages.${system} = {
 
       inherit (pypkgs)
+        python-cowsay
+        python-bin
         callable_module
         is_instance
         assure
@@ -39,9 +43,7 @@
         embd
         kern
         wnix
-        python-bin
 
-        python-cowsay
         dvc-s3
         lightgbm
         tflite-runtime

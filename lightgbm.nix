@@ -1,7 +1,3 @@
-{ pkgs, python }:
-
-with pkgs;
-
 {
   lib,
   config,
@@ -27,7 +23,7 @@ with pkgs;
   opencl-headers,
 
   # dependencies
-  numpy_1,
+  numpy,
   scipy,
 
   # optional-dependencies
@@ -87,7 +83,7 @@ buildPythonPackage rec {
     ];
 
   dependencies = [
-    numpy_1
+    numpy
     scipy
   ];
 
