@@ -25,7 +25,7 @@
 
     in
 
-  {
+  rec {
 
     legacyPackages.${system} = pkgs;
 
