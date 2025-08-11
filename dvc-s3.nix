@@ -1,7 +1,3 @@
-{ pkgs, python }:
-
-with pkgs;
-
 {
   lib,
   aiobotocore,

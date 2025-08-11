@@ -19,11 +19,35 @@
         config.allowUnfree = true;
       };
 
+      pypkgs = pkgs.python3Packages;
+
     in
 
   {
 
-    packages.${system} = pkgs;
+    overlays.default = overlay;
 
+    legacyPackages.${system} = pkgs;
+
+    packages.${system} = {
+
+      inherit (pypkgs)
+        callable_module
+        is_instance
+        assure
+        mmry
+        embd
+        kern
+        wnix
+        python-bin
+
+        python-cowsay
+        dvc-s3
+        lightgbm
+        tflite-runtime
+        lambda-multiprocessing
+      ;
+
+    };
   };
 }
