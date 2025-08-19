@@ -21,8 +21,6 @@ pkgs:
     python-cowsay   = call ./python-cowsay.nix { };
     python-bin      = call ./python-bin.nix { inherit (self) python-cowsay; };
 
-    jello           = call ./jello.nix { };
-
     dvc-s3                  = call ./dvc-s3.nix { };
     lightgbm                = call ./lightgbm.nix { };
     tflite-runtime          = call ./tflite-runtime.nix { };
