@@ -29,7 +29,7 @@
 
     legacyPackages.${system} = pkgs;
 
-    packages.${system} = {
+    packages.${system} = rec {
 
       inherit (pypkgs)
         python-cowsay
@@ -48,9 +48,13 @@
         lambda-multiprocessing
       ;
 
+      default = python-bin;
+
     };
 
     overlays.default = overlay;
+
+    default = packages.${system};
 
   };
 }
