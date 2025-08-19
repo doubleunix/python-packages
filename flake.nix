@@ -54,7 +54,8 @@
 
     overlays.default = overlay;
 
-    default = packages.${system};
+    #default = packages.${system};
+    default = overlays.default;
 
   };
 }
