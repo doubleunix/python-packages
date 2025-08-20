@@ -9,13 +9,6 @@ pkgs:
 
     call = self.callPackage;
 
-    # disable cuda deprecation warning during nix search
-    cudaPackages = self.cudaPackages // {
-      cudaFlags = self.cudaPackages.flags;
-      cudaVersion = self.cudaPackages.cudaMajorMinorVersion;
-    };
-
-
   in {
 
     callable_module = call ./callable-module.nix { };
