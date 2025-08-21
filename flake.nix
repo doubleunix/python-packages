@@ -27,8 +27,6 @@
 
   rec {
 
-    legacyPackages.${system} = pkgs;
-
     packages.${system} = rec {
 
       inherit (pypkgs)
