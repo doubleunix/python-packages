@@ -2,7 +2,7 @@
 
 buildPythonPackage rec {
   pname = "is_instance";
-  version = "head";
+  version = "latest";
   pyproject = true;
 
   # fetch source
