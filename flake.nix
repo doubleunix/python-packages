@@ -46,14 +46,9 @@
         lambda-multiprocessing
       ;
 
-      default = python-bin;
-
     };
 
     overlays.default = overlay;
-
-    #default = packages.${system};
-    default = overlays.default;
 
   };
 }
