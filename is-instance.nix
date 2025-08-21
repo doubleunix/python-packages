@@ -1,4 +1,4 @@
-{ lib , buildPythonPackage , fetchFromGithub , pip , setuptools , python , callable_module, ... }:
+{ lib , buildPythonPackage , fetchFromGitHub , pip , setuptools , python , callable_module, ... }:
 
 buildPythonPackage rec {
   pname = "is_instance";
@@ -6,7 +6,7 @@ buildPythonPackage rec {
   pyproject = true;
 
   # fetch source
-  src = fetchFromGithub {
+  src = fetchFromGitHub {
     owner = "notarealdeveloper";
     repo = "is-instance";
     rev = "bb943236bbd8bfeb98e372d780a52017420ed8c4";
