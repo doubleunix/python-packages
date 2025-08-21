@@ -6,6 +6,7 @@
 , setuptools
 , python
 , pytest
+, pandas
 , sentence-transformers
 , is_instance
 , assure
