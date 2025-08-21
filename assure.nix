@@ -1,16 +1,16 @@
-{ lib , buildPythonPackage , fetchPypi , pip , setuptools , python , numpy ,  ... }:
+{ lib , buildPythonPackage , fetchFromGitHub , pip , setuptools , python , numpy ,  ... }:
 
 buildPythonPackage rec {
   pname = "assure";
-  version = "0.0.6";
+  version = "latest";
   pyproject = true;
 
-  # fetch source
-  src = fetchPypi {
-    inherit pname version;
-    sha256 = "050d381e621d8b9250299631bcf8465a0103eeebe0642b1435cc26c214bda3c0";
+  src = fetchFromGitHub {
+    owner = "notarealdeveloper";
+    repo = "assure";
+    rev = "06f06ba86493307f5bf88ee87a59f2ac523d03d1";
+    hash = "sha256-2+8swEzpawC/CwuBTSCA0D1SaZ8J3e6iPVCzMJORA6s=";
   };
 
-  # PyPI dependencies
   propagatedBuildInputs = [ pip setuptools numpy ];
 }

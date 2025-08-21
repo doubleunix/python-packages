@@ -1,7 +1,7 @@
 {
   lib
 , buildPythonPackage
-, fetchPypi
+, fetchFromGitHub
 , pip
 , setuptools
 , python
@@ -15,22 +15,15 @@
 
 buildPythonPackage rec {
   pname = "embd";
-  version = "0.1.4";
+  version = "latest";
   pyproject = true;
-    
-  # fetch source
-  src = fetchPypi {
-    inherit pname version;
-    sha256 = "17c2042080a9f657220e0ffc7c83c62e17cd3dce4c093d82ae40543b925c38aa";
+
+  src = fetchFromGitHub {
+    owner = "notarealdeveloper";
+    repo = "embd";
+    rev = "0a691990db7476db648d8bad07a41b57d7deb79f";
+    hash = "sha256-KCvt3DrqsjEl8cSra1x+ukr5F4oRMWOU2QOJLbRKkCk=";
   };
-
-  # PyPI dependencies
-
-  # TODO: Learn how to express these range requirements
-  #
-  #  "is_instance >= 0.0.5",
-  #  "assure >= 0.0.5",
-  #  "mmry >= 0.0.5",
 
   propagatedBuildInputs = [
     pip
