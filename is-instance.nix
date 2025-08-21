@@ -1,14 +1,16 @@
-{ lib , buildPythonPackage , fetchPypi , pip , setuptools , python , callable_module, ... }:
+{ lib , buildPythonPackage , fetchFromGithub , pip , setuptools , python , callable_module, ... }:
 
 buildPythonPackage rec {
   pname = "is_instance";
-  version = "0.0.12";
+  version = "head";
   pyproject = true;
 
   # fetch source
-  src = fetchPypi {
-    inherit pname version;
-    sha256 = "e7224eba995d6ffa6a3025ca8ac77d482538b7a37b9381ff1922ab98c42f9f55";
+  src = fetchFromGithub {
+    owner = "notarealdeveloper";
+    repo = "is-instance";
+    rev = "bb943236bbd8bfeb98e372d780a52017420ed8c4";
+    hash = "sha256-VDWjklBXRIXNeV9kHPlJDgx+2tRKySn60yC8cNgTh2Y=";
   };
 
   # PyPI dependencies
