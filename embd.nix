@@ -29,6 +29,7 @@ buildPythonPackage rec {
     pip
     setuptools
     pytest
+    pandas
     sentence-transformers
     is_instance
     assure
