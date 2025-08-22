@@ -1,4 +1,4 @@
-{ lib , buildPythonPackage , fetchFromGitHub , pip , setuptools , python , callable_module, ... }:
+{ lib , buildPythonPackage , fetchPypi , pip , setuptools , python , callable_module, ... }:
 
 buildPythonPackage rec {
   pname = "is_instance";
@@ -6,13 +6,11 @@ buildPythonPackage rec {
   pyproject = true;
 
   # fetch source
-  src = fetchFromGitHub {
-    owner = "notarealdeveloper";
-    repo = "is-instance";
-    rev = "bb943236bbd8bfeb98e372d780a52017420ed8c4";
-    hash = "sha256-VDWjklBXRIXNeV9kHPlJDgx+2tRKySn60yC8cNgTh2Y=";
+  src = fetchPypi {
+    inherit pname version;
+    sha256 = "810ae53cbb7adb05d791af9dda619c159d897f82c23c5e4f3d72532a8d76cb24";
   };
 
-  # PyPI dependencies
-  propagatedBuildInputs = [ pip setuptools callable_module ];
+  buildInputs = [ ];
+  propagatedBuildInputs = [ callable_module ];
 }

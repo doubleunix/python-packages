@@ -11,13 +11,13 @@ pkgs:
 
   in {
 
-    callable_module = call ./callable-module.nix { };
-    is_instance     = call ./is-instance.nix { inherit (self) callable_module; };
+    callable-module = call ./callable-module.nix { };
+    is-instance     = call ./is-instance.nix { inherit (self) callable-module; };
     assure          = call ./assure.nix { };
     mmry            = call ./mmry.nix { };
-    embd            = call ./embd.nix { inherit (self) is_instance assure mmry; };
+    embd            = call ./embd.nix { inherit (self) is-instance assure mmry; };
     kern            = call ./kern.nix { inherit (self) assure mmry; };
-    wnix            = call ./wnix.nix { inherit (self) assure mmry is_instance embd kern; };
+    wnix            = call ./wnix.nix { inherit (self) assure mmry is-instance embd kern; };
     python-cowsay   = call ./python-cowsay.nix { };
     python-bin      = call ./python-bin.nix { inherit (self) python-cowsay; };
 

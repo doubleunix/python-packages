@@ -32,8 +32,8 @@
       inherit (pypkgs)
         python-cowsay
         python-bin
-        callable_module
-        is_instance
+        callable-module
+        is-instance
         assure
         mmry
         embd
