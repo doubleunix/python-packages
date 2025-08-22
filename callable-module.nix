@@ -10,5 +10,6 @@ buildPythonPackage rec {
     hash = "sha256-s/hclZHslyzngQJWMt8KLglh8J4chsTusA4xqlyUOC0=";
   };
 
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ ];
 }

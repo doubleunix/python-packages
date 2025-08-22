@@ -11,6 +11,6 @@ buildPythonPackage rec {
     sha256 = "sha256-IuUPSdIwxyBDcDNVoF99CISm7FvqkQq6bqMxHU3bryg=";
   };
 
-  buildInputs = [ ];
+  build-system = [ setuptools ];
   propagatedBuildInputs = [ callable-module ];
 }
