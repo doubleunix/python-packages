@@ -1,4 +1,4 @@
-{ lib , buildPythonPackage , fetchFromGitHub , pip , setuptools , python , numpy ,  ... }:
+{ lib , buildPythonPackage , fetchFromGitHub , setuptools , numpy ,  ... }:
 
 buildPythonPackage rec {
   pname = "assure";
@@ -12,5 +12,6 @@ buildPythonPackage rec {
     hash = "sha256-2+8swEzpawC/CwuBTSCA0D1SaZ8J3e6iPVCzMJORA6s=";
   };
 
-  propagatedBuildInputs = [ pip setuptools numpy ];
+  build-system = [ setuptools ];
+  propagatedBuildInputs = [ numpy ];
 }

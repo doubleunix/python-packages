@@ -2,13 +2,10 @@
   lib
 , buildPythonPackage
 , fetchFromGitHub
-, pip
 , setuptools
-, python
-, pytest
 , pandas
 , sentence-transformers
-, is_instance
+, is-instance
 , assure
 , mmry
 , ...
@@ -26,13 +23,12 @@ buildPythonPackage rec {
     hash = "sha256-KCvt3DrqsjEl8cSra1x+ukr5F4oRMWOU2QOJLbRKkCk=";
   };
 
+  build-system = [ setuptools ];
+
   propagatedBuildInputs = [
-    pip
-    setuptools
-    pytest
     pandas
     sentence-transformers
-    is_instance
+    is-instance
     assure
     mmry
   ];

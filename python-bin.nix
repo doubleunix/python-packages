@@ -1,11 +1,4 @@
-
-{ lib
-, buildPythonPackage
-, fetchPypi
-, python-cowsay
-, pip
-, setuptools
-, ... }:
+{ lib , buildPythonPackage , fetchPypi , setuptools , ... }:
 
 buildPythonPackage rec {
   pname = "python-bin";
@@ -13,15 +6,12 @@ buildPythonPackage rec {
   pyproject = true;
 
   src = fetchPypi {
-    pname = "python_bin";
-    inherit version;
+    inherit pname version;
     sha256 = "sha256-Z8YZGqe9XjO7pvRNa7564sC59iN1Wj4GWUNEHOcKW/Y=";
   };
 
-  propagatedBuildInputs = [
-    pip
-    setuptools
-  ];
+  build-system = [ setuptools ];
+  propagatedBuildInputs = [ ];
 
   meta = with lib; {
     description = "It's bin.";
