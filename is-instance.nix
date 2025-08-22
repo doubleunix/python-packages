@@ -1,4 +1,4 @@
-{ lib , buildPythonPackage , fetchPypi , pip , setuptools , python , callable-module, ... }:
+{ lib , buildPythonPackage , fetchPypi , setuptools , callable-module, ... }:
 
 buildPythonPackage rec {
   pname = "is_instance";

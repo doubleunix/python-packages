@@ -1,4 +1,4 @@
-{ lib , buildPythonPackage , fetchPypi , pip , setuptools , python , ... }:
+{ lib , buildPythonPackage , fetchPypi , setuptools , ... }:
 
 buildPythonPackage rec {
   pname = "callable_module";
