@@ -36,6 +36,7 @@
         embd
         kern
         wnix
+        webfs
 
         dvc-s3
         lightgbm
