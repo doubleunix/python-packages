@@ -3,6 +3,7 @@
 , buildPythonPackage
 , fetchFromGitHub
 , setuptools
+, pytest
 , pandas
 , sentence-transformers
 , is-instance
@@ -24,6 +25,8 @@ buildPythonPackage rec {
   };
 
   build-system = [ setuptools ];
+
+  checkInputs = [ pytest ];
 
   propagatedBuildInputs = [
     pandas
