@@ -16,6 +16,7 @@ final: prev:
           kern                    = self.callPackage ./kern.nix { inherit (self) assure mmry; };
           wnix                    = self.callPackage ./wnix.nix { inherit (self) is-instance assure mmry embd kern; };
           python-bin              = self.callPackage ./python-bin.nix { inherit (self) python-cowsay; };
+          webfs                   = self.callPackage ./webfs.nix { inherit (self) mmry; };
 
           dvc-s3                  = self.callPackage ./dvc-s3.nix { };
           lightgbm                = self.callPackage ./lightgbm.nix { };
