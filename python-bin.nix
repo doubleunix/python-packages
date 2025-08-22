@@ -1,7 +1,7 @@
 { lib , buildPythonPackage , fetchPypi , setuptools , ... }:
 
 buildPythonPackage rec {
-  pname = "python-bin";
+  pname = "python_bin";
   version = "0.0.3";
   pyproject = true;
 
