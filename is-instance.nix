@@ -1,16 +1,16 @@
-{ lib , buildPythonPackage , fetchPypi , pip , setuptools , python , callable_module, ... }:
+{ lib , buildPythonPackage , fetchPypi , pip , setuptools , python , callable-module, ... }:
 
 buildPythonPackage rec {
   pname = "is_instance";
-  version = "latest";
+  version = "0.0.16";
   pyproject = true;
 
   # fetch source
   src = fetchPypi {
     inherit pname version;
-    sha256 = "810ae53cbb7adb05d791af9dda619c159d897f82c23c5e4f3d72532a8d76cb24";
+    sha256 = "sha256-IuUPSdIwxyBDcDNVoF99CISm7FvqkQq6bqMxHU3bryg=";
   };
 
   buildInputs = [ ];
-  propagatedBuildInputs = [ callable_module ];
+  propagatedBuildInputs = [ callable-module ];
 }

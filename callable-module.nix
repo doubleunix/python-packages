@@ -1,16 +1,14 @@
-{ lib , buildPythonPackage , fetchFromGitHub , pip , setuptools , python , ... }:
+{ lib , buildPythonPackage , fetchPypi , pip , setuptools , python , ... }:
 
 buildPythonPackage rec {
   pname = "callable_module";
-  version = "latest";
+  version = "0.0.2";
   pyproject = true;
 
-  src = fetchFromGitHub {
-    owner = "notarealdeveloper";
-    repo = "callable-module";
-    rev = "b0012e03e6a3d607eddc773f29d713765a561b40";
-    hash = "sha256-jEMTI/XZwe67Ta51F6IafK5U/M2Ixt3Vh4TA5+RZOAA=";
+  src = fetchPypi {
+    inherit pname version;
+    hash = "sha256-s/hclZHslyzngQJWMt8KLglh8J4chsTusA4xqlyUOC0=";
   };
 
-  propagatedBuildInputs = [ pip setuptools ];
+  propagatedBuildInputs = [ ];
 }
