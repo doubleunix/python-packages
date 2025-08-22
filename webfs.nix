@@ -16,7 +16,7 @@ buildPythonPackage rec {
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "";
+    sha256 = "sha256-pA/2DILvbPYzUVxQnRRp/Cwj3RLPlTmffXcOuNz+5S8=";
   };
 
   pythonRemoveDeps = [ "bs4" ];
