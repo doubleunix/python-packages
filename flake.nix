@@ -30,10 +30,9 @@
     packages.${system} = rec {
 
       inherit (pypkgs)
-        python-cowsay
-        python-bin
         callable-module
         is-instance
+        python-bin
         assure
         mmry
         embd
@@ -42,6 +41,7 @@
 
         dvc-s3
         lightgbm
+        python-cowsay
         tflite-runtime
         lambda-multiprocessing
       ;

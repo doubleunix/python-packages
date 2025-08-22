@@ -1,11 +1,11 @@
 {
   lib,
-  aiobotocore,
-  boto3,
   buildPythonPackage,
-  dvc-objects,
   fetchPypi,
   flatten-dict,
+  aiobotocore,
+  boto3,
+  dvc-objects,
   s3fs,
   setuptools-scm,
 }:
@@ -40,13 +40,7 @@ buildPythonPackage rec {
     s3fs
   ];
 
-  # Network access is needed for tests
   doCheck = false;
-
-  # Circular dependency
-  # pythonImportsCheck = [
-  #   "dvc_s3"
-  # ];
 
   meta = with lib; {
     description = "s3 plugin for dvc";

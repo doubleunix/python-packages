@@ -2,6 +2,7 @@
 , buildPythonPackage
 , fetchPypi
 , setuptools
+, pytest
 , filetype
 , pypandoc
 , pypdf
@@ -28,6 +29,8 @@ buildPythonPackage rec {
   pythonRemoveDeps = [ "bs4" ];
 
   build-system = [ setuptools ];
+
+  checkInputs = [ pytest ];
 
   propagatedBuildInputs = [
     filetype
